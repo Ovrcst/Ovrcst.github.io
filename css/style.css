@@ -8,6 +8,14 @@
     overflow: hidden;
 }
 
+html, body{
+    overflow: hidden;
+}
+
+body{
+    position: relative;
+}
+
 ::-webkit-scrollbar{
     display: none;
 }
@@ -66,6 +74,8 @@ nav{
 }
 
 .navs{
+    position: absolute;
+    right: 2em;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     height: 100%;
@@ -111,12 +121,6 @@ nav{
     font-size: 7vw;
     color: var(--grey);
     font-weight: bold;
-}
-
-@media screen and (max-width: 870px) {
-    .welcome{
-        font-size:10vmin;
-    }
 }
 
 .arrow{
@@ -177,22 +181,6 @@ footer{
     width:100vw;
     background-color: brown;
 }
-
-.transition-one{
-    transition : 1s ease-in-out;
-}
-
-@media screen and (max-width: 768px){
-    *{
-        overflow: scroll;
-    }
-    .student{
-        display: inline-block;
-        transform: translateY(-100%);
-        opacity: 0;
-    }
-}
-
 @keyframes strike {
     from { text-decoration-color: transparent; }
     to { text-decoration-color: var(--lighterblack);}
@@ -202,3 +190,49 @@ footer{
     text-decoration-thickness: 15%;
     animation: strike 1s linear;
   }
+
+.transition-one{
+    transition : 1s ease-in-out;
+}
+
+@media screen and (max-width: 870px) {
+    .welcome{
+        font-size:10vmin;
+    }
+}
+
+@media screen and (max-width: 1040px) {
+    .welcome{
+        font-size:10vmin;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .welcome{
+        font-size:10vmin;
+    }
+}
+
+@media screen and (max-width: 768px){
+    *{
+        overflow: scroll; /*HIDDEN*/
+    }
+    .student{
+        display: inline-block;
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    /*.navs{
+        display: none;
+    }
+
+    
+
+    .burger{
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }*/
+}
+
