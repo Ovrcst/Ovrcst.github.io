@@ -38,9 +38,9 @@ body{
 
 .all-page{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     height: 100vh;
-    width: 200vw;
+    width: 300vw;
     padding-top: 8vh;
 }
 
@@ -174,6 +174,78 @@ nav{
     background-color: green;
 }
 
+.contact-container{
+    padding: 2em;
+    height:87vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.contact-message{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-message p{
+    text-align: center;
+    font-size: 12vmin;
+    color: var(--grey);
+    font-weight: bold;
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container p{
+    color: var(--grey);
+    font-size: 30px;
+    font-weight: bold;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.form-container form label{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+input, textarea{
+    border-style:double;
+    padding: 5px;
+    border-color: var(--grey);
+}
+
+.form-container form input{
+    width: 80%;
+}
+
+.form-container form #message{
+    width: 80%;
+    height: 50%;
+}
+
+.form-container form input:focus, textarea:focus{
+    animation: shadow-in .2s ease-in-out forwards;
+}
+
+@keyframes shadow-in {
+    100%{
+        box-shadow: 15px 15px 8px var(--grey);
+    }
+}
+
 footer{
     bottom: 0%;
     position: fixed;
@@ -221,6 +293,17 @@ footer{
         display: inline-block;
         transform: translateY(-100%);
         opacity: 0;
+    }
+
+    .contact-container{
+        overflow-y: visible;
+        grid-template-columns: 1fr;
+    }
+    .contact-message{
+        height: 40vh;
+    }
+    .form-container{
+        height: 87vh;
     }
     /*.navs{
         display: none;

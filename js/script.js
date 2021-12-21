@@ -15,6 +15,10 @@ projects.addEventListener('click', (e)=>{
     toPageTwo();
 });
 
+contact.addEventListener('click', ()=>{
+    toPageThree();
+})
+
 document.getElementById('trial-button').addEventListener('click', ()=>{
     toTrialWorks();
 });
@@ -41,6 +45,15 @@ function toPageOne(){
     studentAppear();
 }
 
+function toPageThree(){
+    document.getElementById('pageThree').scrollIntoView();
+    projects.classList.remove('active');
+    home.classList.remove('active');
+    contact.classList.add('active');
+    page1=false; page2=false; page3=true;
+    animateAgain();
+}
+
 document.addEventListener('keydown', (e)=>{
     switch (e.keyCode) {
         case 37:
@@ -54,6 +67,9 @@ document.addEventListener('keydown', (e)=>{
         case 39:
             if(page1){
                 toPageTwo();
+            }
+            else if(page2){
+                toPageThree();
             }
             break;
     }
