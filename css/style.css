@@ -207,7 +207,7 @@ footer{
     }
 }
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1366px) {
     .welcome{
         font-size:10vmin;
     }
