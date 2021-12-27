@@ -266,7 +266,7 @@ footer{
 .transition-one{
     transition : 1s ease-in-out;
 }
-
+/*
 @media screen and (max-width: 870px) {
     .welcome{
         font-size:10vmin;
@@ -284,7 +284,7 @@ footer{
         font-size:10vmin;
     }
 }
-
+*/
 @media screen and (max-width: 768px){
     *{
         overflow: scroll; /*HIDDEN*/
@@ -298,12 +298,16 @@ footer{
     .contact-container{
         overflow-y: visible;
         grid-template-columns: 1fr;
-    }
+    }   
     .contact-message{
         height: 40vh;
     }
     .form-container{
         height: 87vh;
+    }
+
+    .logo{
+        display: none;
     }
     /*.navs{
         display: none;

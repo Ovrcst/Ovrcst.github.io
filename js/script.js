@@ -74,3 +74,5 @@ document.addEventListener('keydown', (e)=>{
             break;
     }
 })
+
+window.fitText( document.getElementById('contact-message-id'),0.9)
