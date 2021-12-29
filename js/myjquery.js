@@ -1,6 +1,20 @@
 $(document).ready(function () {
     studentAppear();
     page1=true;
+    $('footer').hide();
+    /*$('footer').css({'transform':'translateX(0)','opacity':'1'});*/
+});
+let pos = 0;
+$('.arrow-up').on('click', function() {
+    if(pos==0){
+        $('.wrap').css('transform', 'translateY(-5vh) rotate(180deg)');
+        pos = -5;
+    }else{
+        $('.wrap').css('transform', 'translateY(0) rotate(180deg)');
+        pos = 0;
+    }
+    $(this).toggleClass('active');
+    $("footer").toggle(500);
 });
 
 function studentAppear(){

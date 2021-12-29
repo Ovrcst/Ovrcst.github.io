@@ -104,7 +104,7 @@ nav{
 .contents{
     display: flex;
     padding: 2em;
-    height: 87vh;
+    height: 92vh;
     width: 100vw;
 }
 
@@ -146,12 +146,12 @@ nav{
 }
 
 .work-container{
-    height: 87vh;
+    height: 92vh;
 }
 
 .works{
     width: 100%;
-    height: 87vh;
+    height: 92vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -170,13 +170,13 @@ nav{
 }
 
 .works-p2{
-    height: 87vh;
+    height: 92vh;
     background-color: green;
 }
 
 .contact-container{
     padding: 2em;
-    height:87vh;
+    height:92vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
@@ -247,11 +247,20 @@ input, textarea{
 }
 
 footer{
+    padding: 0 10px;
+    display: flex;
+    flex-direction: row;
     bottom: 0%;
-    position: fixed;
+    position: absolute;
     height: 5vh;
     width:100vw;
-    background-color: brown;
+    background-color: var(--lighterblack);
+    justify-content: center;
+}
+footer p{
+    color: var(--grey);
+    font-style: italic;
+    text-transform: none;
 }
 @keyframes strike {
     from { text-decoration-color: transparent; }
@@ -266,25 +275,7 @@ footer{
 .transition-one{
     transition : 1s ease-in-out;
 }
-/*
-@media screen and (max-width: 870px) {
-    .welcome{
-        font-size:10vmin;
-    }
-}
 
-@media screen and (max-width: 1040px) {
-    .welcome{
-        font-size:10vmin;
-    }
-}
-
-@media screen and (max-width: 1366px), screen and (max-heigth: 587px) {
-    .welcome{
-        font-size:10vmin;
-    }
-}
-*/
 @media screen and (max-width: 768px){
     *{
         overflow: scroll; /*HIDDEN*/
@@ -303,23 +294,55 @@ footer{
         height: 40vh;
     }
     .form-container{
-        height: 87vh;
+        height:92vh;
     }
 
     .logo{
         display: none;
     }
-    /*.navs{
-        display: none;
-    }
-
-    
-
-    .burger{
-        display: flex;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-    }*/
 }
+
+    /* Arrow From https://codepen.io/simonbreiter/pen/oLJAKy 
+    and https://freefrontend.com/css-arrows/*/
+.arrow-up {
+  width: 1.25rem;
+  height: 1.25rem;
+  display: inline-block;
+  position: relative;
+  margin: 0 1rem;
+  cursor: pointer;
+}
+.arrow-up span {
+  top: 0.5rem;
+  position: absolute;
+  width: 0.75rem;
+  height: 0.1rem;
+  background-color: var(--lighterblack);
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+.arrow-up span:first-of-type {
+  left: 0;
+  transform: rotate(45deg);
+}
+.arrow-up span:last-of-type {
+  right: 0;
+  transform: rotate(-45deg);
+}
+.arrow-up.active span:first-of-type {
+  transform: rotate(-45deg);
+}
+.arrow-up.active span:last-of-type {
+  transform: rotate(45deg);
+}
+.wrap{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    transform: rotate(180deg);
+    position:absolute;
+    bottom: 2vh;
+    transition: all .5s ease-in-out;
+}
+
 
