@@ -36,6 +36,10 @@ body{
                                     supported by Chrome, Edge, Opera and Firefox */
 }
 
+.all-content{
+    position: relative;
+}
+
 .loading-page{
     display: flex;
     justify-content: center;
@@ -328,7 +332,7 @@ footer p{
 
 @media screen and (max-width: 768px){
     *{
-        overflow: scroll; /*HIDDEN*/
+        overflow-y: scroll; /*HIDDEN*/
     }
     .student{
         display: inline-block;
