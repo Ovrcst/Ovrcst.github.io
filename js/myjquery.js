@@ -1,3 +1,9 @@
+$(window).on('load',()=>{
+    $('.loading-page').fadeOut(1000);
+    $('.all-content').fadeOut(0);
+    $('.all-content').fadeIn(2000);
+});
+
 $(document).ready(function () {
     studentAppear();
     page1=true;
