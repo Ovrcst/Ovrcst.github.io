@@ -278,7 +278,8 @@ form{
 input, textarea{
     border-style:double;
     padding: 5px;
-    border-color: var(--grey);
+    border: none;
+    border-bottom: 2px solid var(--grey);
 }
 
 .form-container form input{
@@ -291,6 +292,7 @@ input, textarea{
 }
 
 .form-container form input:focus, textarea:focus{
+    outline: none;
     animation: shadow-in .2s ease-in-out forwards;
 }
 
@@ -298,6 +300,21 @@ input, textarea{
     100%{
         box-shadow: 15px 15px 8px var(--grey);
     }
+}
+
+#submit{
+    font-weight: bold;
+    color: var(--lighterblack);
+    border: 2px solid var(--lighterblack);
+    margin: 1vh;
+    border-radius: 15px;
+    padding: 5px;
+    transition: all .5s ease-in-out;
+    position: relative;
+}
+
+#submit:hover{
+    background-color: var(--grey);
 }
 
 footer{
