@@ -51,7 +51,7 @@
         </div>
 
         <div class="all-page">
-            <div class="container-fluid" id="pageOne">
+            <div class="container-fluid pages" id="pageOne">
                 <div class="contents noselect">
                     <div class="main">
                         <p class="welcome">hi i'm <span class="emphasize">mhike</span> and i'm a <br><span class="webdev emphasize strike">web developer </span>
@@ -65,7 +65,7 @@
                 </div>
             </div>
             <div class="work-container noselect" id="pageTwo">
-                <div class="works" id="worksOne">
+                <div class="works pages" id="worksOne">
                     <p class="works-message">nothing to <span class="emphasize" id="trial-button">see</span> here yet</p>
                 </div>
                 <div class="works-p2" id="trial-works">
@@ -73,7 +73,7 @@
                 </div>
             </div>
 
-            <div class="contact-container" id="pageThree">
+            <div class="contact-container pages" id="pageThree">
                 <div class="contact-message noselect">
                     <p id="contact-message-id">i'm still a <span class="emphasize">student</span> but i'm working on it</p>
                 </div>
@@ -86,8 +86,8 @@
                         <input type="email" name="email" id="email" required><br>
                         <label for="message" class="emphasize">message:</label>
                         <textarea name="message" id="message" cols="30" rows="1" required></textarea>
-			<button type="submit">Submit</button>
-			<p id="my-form-status"></p>
+                        <button type="submit" id="submit"><span class="emphasize">Submit</span></button>
+                        <p id="my-form-status"></p>
                     </form>
                 </div>
             </div>
@@ -108,6 +108,5 @@
     <script src="js/myjquery.js"></script>
     <script src="js/fittext.js"></script>
     <script src="js/script.js"></script>
-    <script src="js/visible.js"></script>
 </body>
 </html>
