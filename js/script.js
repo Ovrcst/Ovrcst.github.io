@@ -10,10 +10,15 @@ async function handleSubmit(event) {
         if(!item.value){
             empty = empty+" "+item.getAttribute('name');
             success=false
+            //EDIT
+            item.classList.add('empty','shake');
         }
+        item.addEventListener('animationend',()=>{
+            item.classList.remove('shake','empty');
+        })
     })
     if(!success){
-        alert(empty)
+        //status.innerHTML=empty;
         return false;
     }
     else{
