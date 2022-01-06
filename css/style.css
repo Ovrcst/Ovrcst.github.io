@@ -289,6 +289,10 @@ input, textarea{
     border-bottom: 2px solid var(--grey);
 }
 
+input:focus, textarea:focus{
+    border-bottom: 2px solid var(--lighterblack);
+}
+
 .shake{
     animation: shaked 1.2s ease-in-out;
 }
