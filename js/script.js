@@ -1,3 +1,45 @@
+var form = document.getElementById("my-form");
+    
+async function handleSubmit(event) {
+    event.preventDefault();
+    var status = document.getElementById("my-form-status");
+    var requiredField = document.querySelectorAll('.required');
+    var success =true;
+    var empty="Please fill";
+    requiredField.forEach(item =>{
+        if(!item.value){
+            empty = empty+" "+item.getAttribute('name');
+            success=false
+        }
+    })
+    if(!success){
+        alert(empty)
+        return false;
+    }
+    else{
+        var data = new FormData(event.target);
+    fetch(event.target.action, {
+    method: form.method,
+    body: data,
+    headers: {
+        'Accept': 'application/json'
+    }
+    }).then(response => {
+    status.innerHTML = "Thanks for your submission!";
+    form.reset()
+    }).catch(error => {
+    status.innerHTML = "Oops! There was a problem submitting your form"
+    });
+    }
+}
+form.addEventListener("submit", handleSubmit);
+
+
+// var requiredField = document.querySelectorAll('.required');
+
+
+
+
 const home = document.getElementById('home');
 const projects = document.getElementById('projects');
 const contact = document.getElementById('contact');
@@ -75,25 +117,23 @@ document.addEventListener('keydown', (e)=>{
     }
 })
 
-var form = document.getElementById("my-form");
-    
-async function handleSubmit(event) {
-    event.preventDefault();
-    var status = document.getElementById("my-form-status");
-    var data = new FormData(event.target);
-    fetch(event.target.action, {
-    method: form.method,
-    body: data,
-    headers: {
-        'Accept': 'application/json'
-    }
-    }).then(response => {
-    status.innerHTML = "Thanks for your submission!";
-    form.reset()
-    }).catch(error => {
-    status.innerHTML = "Oops! There was a problem submitting your form"
-    });
-}
-form.addEventListener("submit", handleSubmit)
-
 window.fitText( document.getElementById('contact-message-id'),0.9)
+
+// async function handleSubmit(event) {
+//     event.preventDefault();
+//     var status = document.getElementById("my-form-status");
+//     var data = new FormData(event.target);
+//     fetch(event.target.action, {
+//     method: form.method,
+//     body: data,
+//     headers: {
+//         'Accept': 'application/json'
+//     }
+//     }).then(response => {
+//     status.innerHTML = "Thanks for your submission!";
+//     form.reset()
+//     }).catch(error => {
+//     status.innerHTML = "Oops! There was a problem submitting your form"
+//     });
+// }
+// form.addEventListener("submit", handleSubmit);

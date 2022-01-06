@@ -8,7 +8,13 @@
     overflow: hidden;
 }
 
+@font-face {
+    font-family: RobotoLight;
+    src: url(Roboto-Light.ttf);
+}
+
 html, body{
+    font-family: RobotoLight;
     overflow: hidden;
 }
 
@@ -340,7 +346,7 @@ footer p{
   .strike {  
     text-decoration: line-through;
     text-decoration-thickness: 15%;
-    animation: strike 1s linear;
+    animation: strike 2.5s linear;
   }
 
 .transition-one{
