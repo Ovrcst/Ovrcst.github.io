@@ -30,6 +30,12 @@ async function handleSubmit(event) {
         'Accept': 'application/json'
     }
     }).then(response => {
+        requiredField.forEach(item =>{
+            item.classList.add('success');
+            item.addEventListener('animationend',()=>{
+                item.classList.remove('success');
+            })
+        })
     status.innerHTML = "Thanks for your submission!";
     form.reset()
     }).catch(error => {
