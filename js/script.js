@@ -47,8 +47,11 @@ form.addEventListener("submit", handleSubmit);
 
 
 // var requiredField = document.querySelectorAll('.required');
-
-
+document.onkeydown = function(key){
+    if(key.which==9 && (page1||page2)){
+        return false;
+    }
+}
 
 
 const home = document.getElementById('home');
