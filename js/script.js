@@ -1,6 +1,7 @@
 var form = document.getElementById("my-form");
-    
-async function handleSubmit(event) {
+var discord = "https://discord.com/api/webhooks/930309703408431125/yhNDQfsorDzapz9clEX9_9a2TmVoLC79I_jn2EGE63SbAPdZMp92YsbWLFu4kH9ORUn5";
+
+function handleSubmit(event){
     event.preventDefault();
     var status = document.getElementById("my-form-status");
     var requiredField = document.querySelectorAll('.required');
@@ -23,26 +24,77 @@ async function handleSubmit(event) {
     }
     else{
         var data = new FormData(event.target);
-    fetch(event.target.action, {
-    method: form.method,
-    body: data,
-    headers: {
-        'Accept': 'application/json'
-    }
-    }).then(response => {
-        requiredField.forEach(item =>{
-            item.classList.add('success');
-            item.addEventListener('animationend',()=>{
-                item.classList.remove('success');
+        var msg = {
+            "content": `name: ${data.get('name')} \nemail: ${data.get('email')} \nmessage: ${data.get('message')}`
+        }
+        fetch(discord, {
+        "method": "POST", "headers": {"content-type": "application/json"}, 
+        "body": JSON.stringify(msg)
+        }).then(response => {
+            requiredField.forEach(item =>{
+                item.classList.add('success');
+                item.addEventListener('animationend',()=>{
+                    item.classList.remove('success');
+                })
             })
-        })
-    status.innerHTML = "Thanks for your submission!";
-    form.reset()
-    }).catch(error => {
-    status.innerHTML = "Oops! There was a problem submitting your form"
-    });
+        status.innerHTML = "Thanks for your submission!";
+        form.reset()
+        }).catch(error => {
+        status.innerHTML = "Oops! There was a problem submitting your form"
+        });
     }
 }
+
+
+
+
+
+
+
+
+// async function handleSubmit(event) {
+//     event.preventDefault();
+//     var status = document.getElementById("my-form-status");
+//     var requiredField = document.querySelectorAll('.required');
+//     var success =true;
+//     var empty="Please fill";
+//     requiredField.forEach(item =>{
+//         if(!item.value){
+//             empty = empty+" "+item.getAttribute('name');
+//             success=false
+//             //EDIT
+//             item.classList.add('empty','shake');
+//         }
+//         item.addEventListener('animationend',()=>{
+//             item.classList.remove('shake','empty');
+//         })
+//     })
+//     if(!success){
+//         //status.innerHTML=empty;
+//         return false;
+//     }
+//     else{
+//         var data = new FormData(event.target);
+//     fetch(event.target.action, {
+//     method: form.method,
+//     body: data,
+//     headers: {
+//         'Accept': 'application/json'
+//     }
+//     }).then(response => {
+//         requiredField.forEach(item =>{
+//             item.classList.add('success');
+//             item.addEventListener('animationend',()=>{
+//                 item.classList.remove('success');
+//             })
+//         })
+//     status.innerHTML = "Thanks for your submission!";
+//     form.reset()
+//     }).catch(error => {
+//     status.innerHTML = "Oops! There was a problem submitting your form"
+//     });
+//     }
+// }
 form.addEventListener("submit", handleSubmit);
 
 
