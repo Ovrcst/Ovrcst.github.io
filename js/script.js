@@ -1,5 +1,5 @@
 var form = document.getElementById("my-form");
-var discord = "https://discord.com/api/webhooks/930309703408431125/yhNDQfsorDzapz9clEX9_9a2TmVoLC79I_jn2EGE63SbAPdZMp92YsbWLFu4kH9ORUn5";
+var discord = "https://discord.com/api/webhooks/1046349369525424188/R1G2wLRCmroXsygvcHn0vVmV-9XPAYWFyTfb2xUJUYwuUaOL_DvqOaVy1zzbA9IbKZ9L";
 
 function handleSubmit(event){
     event.preventDefault();
